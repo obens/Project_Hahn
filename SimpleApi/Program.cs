@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<IDataRepository, InMemoryDataRepository>();
 builder.Services.AddControllers();
-
+// Build the application
 var app = builder.Build();
 
 app.MapControllers();
@@ -25,8 +25,7 @@ public class InMemoryDataRepository : IDataRepository
     {
         new DataModel { Id = 1, Name = "Item 1" },
         new DataModel { Id = 2, Name = "Item 2" },
-        new DataModel { Id = 3, Obenson = "Item 2" },
-        new DataModel { Id = 4, Maurice = "Item 2" },
+       
     };
 
     public IEnumerable<DataModel> GetAll() => _data;
